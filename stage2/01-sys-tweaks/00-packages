@@ -1,4 +1,4 @@
-ssh less fbset sudo psmisc strace ed ncdu crda
+﻿ssh less fbset sudo psmisc strace ed ncdu crda
 console-setup keyboard-configuration debconf-utils parted
 build-essential manpages-dev bash-completion gdb pkg-config
 python-is-python3
@@ -32,3 +32,5 @@ raspinfo
 udisks2
 unzip zip p7zip-full
 file
+pigpiod pigpio
+openjdk-11-jdk-headless

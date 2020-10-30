@@ -1,4 +1,4 @@
-#!/bin/bash -e
+﻿#!/bin/bash -e
 
 install -m 755 files/resize2fs_once	"${ROOTFS_DIR}/etc/init.d/"
 
@@ -17,6 +17,13 @@ if [ -n "${PUBKEY_SSH_FIRST_USER}" ]; then
 	chown 1000:1000 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}"/.ssh/authorized_keys
 	chmod 0600 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}"/.ssh/authorized_keys
 fi
+mkdir -p "${ROOTFS_DIR}/opt/photonvision"
+curl -sk "https://api.github.com/repos/photonvision/photonvision/releases/latest" | 
+    grep "browser_download_url.*jar" | 
+    cut -d : -f 2,3 | 
+    tr -d '"' | 
+    wget -qi - -O "${ROOTFS_DIR}/opt/photonvision/photonvision.jar"
+install -m 644 files/photonvision.service "${ROOTFS_DIR}/lib/systemd/system/"
 
 if [ "${PUBKEY_ONLY_SSH}" = "1" ]; then
 	sed -i -Ee 's/^#?[[:blank:]]*PubkeyAuthentication[[:blank:]]*no[[:blank:]]*$/PubkeyAuthentication yes/
@@ -32,6 +39,8 @@ if [ "${ENABLE_SSH}" == "1" ]; then
 else
 	systemctl disable ssh
 fi
+systemctl enable pigpiod
+systemctl enable photonvision
 systemctl enable regenerate_ssh_host_keys
 EOF
 
