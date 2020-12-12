@@ -33,3 +33,4 @@ raspinfo
 ntp
 pigpiod pigpio
 openjdk-11-jdk-headless
+libtbb2
