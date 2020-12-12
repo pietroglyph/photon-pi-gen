@@ -34,3 +34,4 @@ unzip zip p7zip-full
 file
 pigpiod pigpio
 openjdk-11-jdk-headless
+libtbb2
