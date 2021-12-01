@@ -1,4 +1,4 @@
-# pi-gen
+# photon-pi-gen
 
 Tool used to create Raspberry Pi OS images. (Previously known as Raspbian).
 
