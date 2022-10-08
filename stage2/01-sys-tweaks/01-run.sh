@@ -1,4 +1,4 @@
-﻿#!/bin/bash -e
+#!/bin/bash -e
 
 install -m 755 files/resize2fs_once	"${ROOTFS_DIR}/etc/init.d/"
 
@@ -17,6 +17,11 @@ if [ -n "${PUBKEY_SSH_FIRST_USER}" ]; then
 	chown 1000:1000 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}"/.ssh/authorized_keys
 	chmod 0600 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}"/.ssh/authorized_keys
 fi
+if [ "${PUBKEY_ONLY_SSH}" = "1" ]; then
+	sed -i -Ee 's/^#?[[:blank:]]*PubkeyAuthentication[[:blank:]]*no[[:blank:]]*$/PubkeyAuthentication yes/
+s/^#?[[:blank:]]*PasswordAuthentication[[:blank:]]*yes[[:blank:]]*$/PasswordAuthentication no/' "${ROOTFS_DIR}"/etc/ssh/sshd_config
+fi
+
 mkdir -p "${ROOTFS_DIR}/opt/photonvision"
 curl -sk "https://api.github.com/repos/photonvision/photonvision/releases/latest" | 
     grep "browser_download_url.*jar" | 
@@ -24,11 +29,6 @@ curl -sk "https://api.github.com/repos/photonvision/photonvision/releases/latest
     tr -d '"' | 
     wget -qi - -O "${ROOTFS_DIR}/opt/photonvision/photonvision.jar"
 install -m 644 files/photonvision.service "${ROOTFS_DIR}/lib/systemd/system/"
-
-if [ "${PUBKEY_ONLY_SSH}" = "1" ]; then
-	sed -i -Ee 's/^#?[[:blank:]]*PubkeyAuthentication[[:blank:]]*no[[:blank:]]*$/PubkeyAuthentication yes/
-s/^#?[[:blank:]]*PasswordAuthentication[[:blank:]]*yes[[:blank:]]*$/PasswordAuthentication no/' "${ROOTFS_DIR}"/etc/ssh/sshd_config
-fi
 
 on_chroot << EOF
 systemctl disable hwclock.sh

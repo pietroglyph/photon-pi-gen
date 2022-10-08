@@ -526,4 +526,16 @@ To resolve this, ensure that the following files are available (install them if 
 
 You may also need to load the module by hand - run `modprobe binfmt_misc`.
 
-If you are using WSL to build you may have to enable the service `sudo update-binfmts --enable`
+If you are using WSL to build you may have to enable the service `sudo update-binfmts --enable` this needs to be done every time wsl is restarted
+
+##Photonvison Build Notes
+
+This image has wifi disabled and a default user/password of pi:raspberry
+
+To build locally docker is the best choice.  And to speed things up using a apt cache is highly recommended.  These are the steps to build on windows using Ubuntu 20.04 and docker.
+
+1) go to photon-pi-gen root in WSL2
+2) `sudo docker-compose up -d`  This starts the apt cache container it will create a cache in photon-pi-gen root.
+3) `sudo update-binfmts --enable` this enables required support for emulation (WSL2 does not load be default and needs to be done every launch of WSL2)
+4) `bash ./build-docker.sh -c config-dev` The config-dev has the definitions needed to use the apt cache other than that it is identical to the main config
+5) wait for some time you should get a success message with a image in the deploy folder that is created
