@@ -528,7 +528,7 @@ You may also need to load the module by hand - run `modprobe binfmt_misc`.
 
 If you are using WSL to build you may have to enable the service `sudo update-binfmts --enable` this needs to be done every time wsl is restarted
 
-##Photonvison Build Notes
+## Photonvison Build Notes
 
 This image has wifi disabled and a default user/password of pi:raspberry
 
