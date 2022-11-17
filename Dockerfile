@@ -4,11 +4,11 @@ FROM ${BASE_IMAGE}
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -y update && \
-    apt-get -y install --no-install-recommends \
+    apt-get -y install \
         git vim parted \
         quilt coreutils qemu-user-static debootstrap zerofree zip dosfstools \
         libarchive-tools libcap2-bin rsync grep udev xz-utils curl xxd file kmod bc\
-        binfmt-support ca-certificates qemu-utils kpartx fdisk gpg pigz\
+        binfmt-support ca-certificates qemu-utils kpartx fdisk gpg pigz device-tree-compiler\
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /pi-gen/

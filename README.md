@@ -15,7 +15,7 @@ To install the required dependencies for `pi-gen` you should run:
 ```bash
 apt-get install coreutils quilt parted qemu-user-static debootstrap zerofree zip \
 dosfstools libarchive-tools libcap2-bin grep rsync xz-utils file git curl bc \
-qemu-utils kpartx gpg pigz
+qemu-utils kpartx device-tree-compiler \ gpg pigz
 ```
 
 The file `depends` contains a list of tools needed.  The format of this
@@ -384,7 +384,7 @@ maintenance and allows for more easy customization.
 
  - **Stage 5** - The Raspbian Full image. More development
    tools, an email client, learning tools like Scratch, specialized packages
-   like sonic-pi, office productivity, etc.
+   like sonic-pi, office productivity, etc.  
 
 ### Stage specification
 

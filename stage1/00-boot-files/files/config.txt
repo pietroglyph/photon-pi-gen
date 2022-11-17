@@ -60,6 +60,9 @@ display_auto_detect=1
 
 # Enable DRM VC4 V3D driver
 dtoverlay=vc4-kms-v3d
+dtparam=spi=on
+dtparam=audio=off
+
 max_framebuffers=2
 
 # Run in 64-bit mode
@@ -81,3 +84,11 @@ otg_mode=1
 arm_boost=1
 
 [all]
+start_x=1
+gpu_mem=256
+dtoverlay=enc28j60
+dtoverlay=pi3-disable-bt
+gpio=45=op,dh
+disable_camera_led=1
+disable_splash=1
+force_eeprom_read=0

@@ -34,3 +34,8 @@ udisks2
 unzip zip p7zip-full
 file
 kms++-utils
+ntp
+pigpiod pigpio
+default-jdk
+vim
+libtbb2

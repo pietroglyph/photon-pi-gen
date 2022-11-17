@@ -1,0 +1,11 @@
+IMG_NAME='Gloworm'
+TARGET_HOSTNAME=gloworm
+ENABLE_SSH=1
+LOCALE_DEFAULT=en_US.UTF-8
+KEYBOARD_KEYMAP=us
+KEYBOARD_LAYOUT="English (US) - English (US\\, international with dead keys)"
+TIMEZONE_DEFAULT=America/Los_Angeles
+DEPLOY_ZIP=0
+PRESERVE_CONTAINER=0
+CONTINUE=0
+PHOTONVISION_JAR_URL=https://github.com/PhotonVision/photonvision/releases/download/v2021.1.3/photonvision-v2021.1.3.jar
