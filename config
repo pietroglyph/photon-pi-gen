@@ -2,6 +2,7 @@ IMG_NAME='Gloworm'
 TARGET_HOSTNAME=gloworm
 ENABLE_SSH=1
 LOCALE_DEFAULT=en_US.UTF-8
+DEPLOY_COMPRESSION="xz"
 KEYBOARD_KEYMAP=us
 KEYBOARD_LAYOUT="English (US) - English (US\\, international with dead keys)"
 TIMEZONE_DEFAULT=America/Los_Angeles

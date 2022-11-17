@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: built-image
-        path: ./deploy/*Gloworm-lite.img
+        path: ./deploy/*Gloworm-lite.img*
         if-no-files-found: error
 
     - name: Upload debug artifacts
