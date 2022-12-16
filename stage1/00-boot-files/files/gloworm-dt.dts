@@ -333,22 +333,22 @@
 
 				pin_define@NUM_CAMERAS {
 					type = "internal";
-					number = <0x02>;
+					number = <0x01>;
 				};
 
 				pin_define@CAMERA_0_LED {
 					type = "internal";
-					number = <0x20>;
+					number = <0x1e>;
 				};
 
 				pin_define@CAMERA_0_SHUTDOWN {
 					type = "internal";
-					number = <0x21>;
+					number = <0x03>;
 				};
 
 				pin_define@CAMERA_0_UNICAM_PORT {
 					type = "internal";
-					number = <0x01>;
+					number = <0x00>;
 				};
 
 				pin_define@CAMERA_0_I2C_PORT {
@@ -358,40 +358,10 @@
 
 				pin_define@CAMERA_0_SDA_PIN {
 					type = "internal";
-					number = <0x00>;
-				};
-
-				pin_define@CAMERA_0_SCL_PIN {
-					type = "internal";
-					number = <0x01>;
-				};
-
-				pin_define@CAMERA_1_LED {
-					type = "internal";
-					number = <0x1e>;
-				};
-
-				pin_define@CAMERA_1_SHUTDOWN {
-					type = "internal";
-					number = <0x03>;
-				};
-
-				pin_define@CAMERA_1_UNICAM_PORT {
-					type = "internal";
-					number = <0x00>;
-				};
-
-				pin_define@CAMERA_1_I2C_PORT {
-					type = "internal";
-					number = <0x00>;
-				};
-
-				pin_define@CAMERA_1_SDA_PIN {
-					type = "internal";
 					number = <0x1c>;
 				};
 
-				pin_define@CAMERA_1_SCL_PIN {
+				pin_define@CAMERA_0_SCL_PIN {
 					type = "internal";
 					number = <0x1d>;
 				};
