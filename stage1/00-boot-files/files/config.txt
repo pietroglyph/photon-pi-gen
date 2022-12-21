@@ -52,6 +52,11 @@
 # Enable audio (loads snd_bcm2835)
 dtparam=audio=on
 
+dtparam=cam0_reg
+dtparam=cam0_reg_gpio=3
+dtoverlay=cm-swap-i2c0
+dtoverlay=ov5647,cam0
+
 # Automatically load overlays for detected cameras
 camera_auto_detect=1
 
@@ -63,7 +68,7 @@ camera_auto_detect=1
 display_auto_detect=1
 
 # Enable DRM VC4 V3D driver
-#dtoverlay=vc4-kms-v3d
+dtoverlay=vc4-kms-v3d
 dtparam=spi=on
 dtparam=audio=off
 
@@ -82,14 +87,13 @@ disable_overscan=1
 otg_mode=1
 
 [pi4]
-dtoverlay=vc4-fkms-v3d
 
 [pi4]
 # Run as fast as firmware / board allows
 arm_boost=1
 
 [all]
-start_x=1
+#camera_auto_detect=1
 gpu_mem=256
 dtoverlay=enc28j60
 dtoverlay=pi3-disable-bt
@@ -97,4 +101,4 @@ gpio=45=op,dh
 disable_camera_led=1
 disable_splash=1
 force_eeprom_read=0
-dtoverlay=ov9281
+
