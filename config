@@ -1,5 +1,5 @@
-IMG_NAME='Gloworm'
-TARGET_HOSTNAME=gloworm
+IMG_NAME='PhotonVision_limelight-arm64'
+TARGET_HOSTNAME=photonvision
 ENABLE_SSH=1
 LOCALE_DEFAULT=en_US.UTF-8
 DEPLOY_COMPRESSION="xz"
