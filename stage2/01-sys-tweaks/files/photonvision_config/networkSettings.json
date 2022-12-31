@@ -3,6 +3,6 @@
   "connectionType" : "DHCP",
   "staticIp" : "",
   "netmask" : "",
-  "hostname" : "gloworm",
+  "hostname" : "photonvision",
   "shouldManage" : true
 }

@@ -1,5 +1,5 @@
 {
-  "deviceName" : "Gloworm",
+  "deviceName" : "Limelight",
   "deviceLogoPath" : "gloworm.png",
   "supportURL" : "https://support.photonvision.com",
   "ledPins" : [ 13, 18 ],

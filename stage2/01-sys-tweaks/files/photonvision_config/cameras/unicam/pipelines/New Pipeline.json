@@ -1,15 +1,19 @@
-[ "ReflectivePipelineSettings", {
+[ "AprilTagPipelineSettings", {
   "pipelineIndex" : 0,
-  "pipelineType" : "Reflective",
-  "inputImageFlipMode" : "NONE",
+  "pipelineType" : "AprilTag",
   "inputImageRotationMode" : "DEG_0",
   "pipelineNickname" : "New Pipeline",
-  "cameraExposure" : 50,
+  "cameraAutoExposure" : false,
+  "cameraExposure" : 69.4,
   "cameraBrightness" : 50,
-  "cameraGain" : -1,
-  "cameraVideoModeIndex" : 25,
-  "streamingFrameDivisor" : "HALF",
-  "ledMode" : true,
+  "cameraGain" : 50,
+  "cameraRedGain" : 18,
+  "cameraBlueGain" : 24,
+  "cameraVideoModeIndex" : 0,
+  "streamingFrameDivisor" : "NONE",
+  "ledMode" : false,
+  "inputShouldShow" : false,
+  "outputShouldShow" : true,
   "hsvHue" : {
     "first" : 50,
     "second" : 180
@@ -22,10 +26,9 @@
     "first" : 50,
     "second" : 255
   },
+  "hueInverted" : false,
   "outputShouldDraw" : true,
-  "outputShowMultipleTargets" : false,
-  "erode" : false,
-  "dilate" : false,
+  "outputShowMultipleTargets" : true,
   "contourArea" : {
     "first" : 0.0,
     "second" : 100.0
@@ -60,29 +63,19 @@
   "contourGroupingMode" : "Single",
   "contourIntersection" : "Up",
   "solvePNPEnabled" : false,
-  "targetModel" : {
-    "realWorldCoordinatesArray" : [ {
-      "x" : -0.49847498536109924,
-      "y" : 0.0,
-      "z" : 0.0
-    }, {
-      "x" : -0.24942462146282196,
-      "y" : -0.4318000078201294,
-      "z" : 0.0
-    }, {
-      "x" : 0.24942462146282196,
-      "y" : -0.4318000078201294,
-      "z" : 0.0
-    }, {
-      "x" : 0.49847498536109924,
-      "y" : 0.0,
-      "z" : 0.0
-    } ],
-    "boxHeight" : 0.30479999999999996
-  },
+  "targetModel" : "k6in_16h5",
   "cornerDetectionStrategy" : "APPROX_POLY_DP_AND_EXTREME_CORNERS",
   "cornerDetectionUseConvexHulls" : true,
   "cornerDetectionExactSideCount" : false,
   "cornerDetectionSideCount" : 4,
-  "cornerDetectionAccuracyPercentage" : 10.0
+  "cornerDetectionAccuracyPercentage" : 10.0,
+  "tagFamily" : "kTag16h5",
+  "decimate" : 1,
+  "blur" : 0.0,
+  "threads" : 1,
+  "debug" : false,
+  "refineEdges" : true,
+  "numIterations" : 200,
+  "hammingDist" : 1,
+  "decisionMargin" : 30
 } ]
