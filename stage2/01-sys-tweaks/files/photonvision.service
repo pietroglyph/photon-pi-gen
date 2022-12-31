@@ -2,7 +2,7 @@
 Description=PhotonVision server
 [Service]
 WorkingDirectory=/opt/photonvision
-ExecStart=java -jar /opt/photonvision/photonvision.jar
+ExecStart=java -jar -Xmx512m /opt/photonvision/photonvision.jar
 ExecStop=/bin/systemctl kill photonvision
 Type=simple
 Restart=on-failure
