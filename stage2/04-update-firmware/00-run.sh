@@ -17,6 +17,6 @@ rm -rf /boot.bak
 
 apt-get purge -y python3 gdb gcc g++ default-jdk
 apt-get autoremove -y
-apt-get install -y default-jre
+apt-get install -y openjdk-11-jre
 
 EOF
