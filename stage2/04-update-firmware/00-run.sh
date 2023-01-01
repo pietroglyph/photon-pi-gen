@@ -9,7 +9,7 @@ rm -rf /var/lib/apt/lists/*
 apt-get clean
 rm -rf /usr/share/locale/
 rm -rf /usr/share/doc
-apt purge 'x11-*'
+apt purge -y 'x11-*'
 rm /boot/start_db.elf /boot/start4db.elf /boot/start4x.elf /boot/start4cd.elf /boot/start_cd.elf
 rm /boot/kernel7.img /boot/kernel7l.img /boot/kernel.img
 rm -rf /opt/vc
