@@ -15,4 +15,8 @@ rm /boot/kernel7.img /boot/kernel7l.img /boot/kernel.img
 rm -rf /opt/vc
 rm -rf /boot.bak
 
+apt-get purge -y python3 gdb gcc g++ default-jdk
+apt-get autoremove -y
+apt-get install -y default-jre
+
 EOF

@@ -35,7 +35,7 @@ file
 kms++-utils
 ntp
 pigpiod pigpio
-default-jdk
+default-jre
 vim
 libtbb2
 git
